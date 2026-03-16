@@ -33,7 +33,7 @@ function resetGame() {
 }
 
 async function checkWinState() {
-  const response = await fetch("/api/check", {
+  const response = await fetch("/api/validate-board", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ board }),

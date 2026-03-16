@@ -123,7 +123,7 @@ app.post("/api/move", (req, res) => {
   return res.json({ board });
 });
 
-app.post("/api/check", (req, res) => {
+app.post("/api/validate-board", (req, res) => {
   const board = Array.isArray(req.body.board) ? req.body.board : [];
 
   // Intentional CTF flaw: no turn validation and no integrity checks.
