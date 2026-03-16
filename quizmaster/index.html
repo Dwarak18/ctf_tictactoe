@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vulnix Quiz Platform</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .hero {
+      text-align: center;
+      padding: 56px 20px;
+      max-width: 760px;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      color: #58a6ff;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    .hero p {
+      font-size: 1.08rem;
+      color: #8b949e;
+      margin-bottom: 28px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 26px;
+      background: #238636;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1rem;
+      margin: 5px;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #2ea043; }
+    .btn-secondary {
+      background: #21262d;
+      border: 1px solid #30363d;
+    }
+    .btn-secondary:hover { background: #30363d; }
+    .notice {
+      margin-top: 34px;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-left: 4px solid #f78166;
+      padding: 14px 22px;
+      border-radius: 6px;
+      font-size: 0.92rem;
+      color: #8b949e;
+      max-width: 580px;
+      line-height: 1.4;
+    }
+    footer {
+      margin-top: 52px;
+      font-size: 0.82rem;
+      color: #484f58;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Vulnix Quiz Platform</h1>
+    <p>Compete. Score. Dominate the leaderboard.</p>
+    <a href="login.php" class="btn">Login</a>
+    <a href="leaderboard.php" class="btn btn-secondary">Leaderboard</a>
+  </div>
+  <div class="notice">
+    <strong>Admin Notice:</strong> The admin panel is restricted to authorized personnel only.
+    Unauthorized access attempts are strictly prohibited.
+  </div>
+  <footer>Vulnix CTF 2025 - Built fast, shipped faster</footer>
+</body>
+</html>
