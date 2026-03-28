@@ -1,0 +1,12 @@
+{
+  "name": "bugboard-bot",
+  "version": "1.0.0",
+  "description": "BugBoard Analytics – admin triager bot",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "puppeteer": "21.11.0"
+  }
+}

@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+
+  # ── Web application (PHP 7.4 + Apache + SQLite) ──────────────────────────
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - bugboard-data:/var/www/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/login.php"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  # ── Admin triager bot (Puppeteer / Chromium) ──────────────────────────────
+  bot:
+    build:
+      context: ./bot
+      dockerfile: Dockerfile
+    depends_on:
+      web:
+        condition: service_healthy
+    environment:
+      TARGET_URL:   "http://web"
+      BOT_INTERVAL: "30000"   # milliseconds between review cycles
+    restart: unless-stopped
+    # Shared memory for Chromium
+    shm_size: '256mb'
+
+volumes:
+  bugboard-data:
